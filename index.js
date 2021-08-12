@@ -45,9 +45,16 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+// add a parameter called array
+function copy(array){
+  return [...array];
+  // return an array
+  // function mdn article
 }    
+
+copy(originalFlavors);
+
+
 
 
 
@@ -64,9 +71,17 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
+// adding an array as a parameter
+function is31Flavors(array){
+  if (array.length === 31) {
+    return true;
+ } else {
+   return false;
+ }
 }
+  // conditional
+  // if array.length is 31 return true else return false
+  is31Flavors(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -80,11 +95,15 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
+//2 parameters array, string
+function addFlavor(array, string){
+  array.unshift(string);
+  return (array);
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+ //return the array
 }
 
+is31Flavors(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -97,11 +116,15 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+//1 parameter - array
+function removeLastFlavor(array){
+  array.pop();
+  return (array);
+ //use .pop to remove the last item
+ // return the array
 }
 
-
+removeLastFlavor(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -113,10 +136,13 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+// 2 parameters array, index
+function getFlavorByIndex(array, index){
+  return array[index];
+  // return the array[index];
 }
+
+console.log(getFlavorByIndex);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -134,8 +160,21 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
+// 2 parameters array, string 
+function removeFlavorByName(array, string){
+  // loop through the array and each index for the string 
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)){
+    removeFlavorByName.splice();
+    }
+  }
+
+  // conditional that checks for an exact match ===
+  // if the item matches the string remove the item at that specific index .splice - index (i) and the number of items to delete
+  
+  //oujtside of the loop you are going to return the array
   /*your code here*/
+ 
 }
 
 
@@ -164,18 +203,18 @@ function filterByWord(array, string){
   // make a new array to push our results to
   const filteredArray = [];
   //step 2 - we need to write that will check every item inside the array
-  for (i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++){
     //write an if statement to check to see if the item includes the string
-    if(array[i].includes(string));{
+    if(array[i].includes(string)){
     // if this is true we want to push the item at that index into our filteredArray
     filteredArray.push(array[i]); 
     }
   }
-
+// outside of our loop so that our loop doesn't break we want to return results
 return filteredArray;
 }
 
-console.log ('task 7', filteredByWord(originalFlavors, 'Chocolate'));
+console.log('task 7', filterByWord(originalFlavors, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
